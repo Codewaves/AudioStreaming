@@ -69,7 +69,7 @@ final class AudioFileStreamProcessor {
     /// Closes the currently open `AudioFileStream` instance, if opened.
     func closeFileStreamIfNeeded() {
         guard let fileStream = audioFileStream else {
-            Logger.debug("audio file stream not opened", category: .generic)
+            Logger.debug("Audio file stream not opened", category: .generic)
             return
         }
         AudioFileStreamClose(fileStream)

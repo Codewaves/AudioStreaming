@@ -5,7 +5,7 @@ import PackageDescription
 let package = Package(
     name: "AudioStreaming",
     platforms: [
-        .iOS(.v12),
+        .iOS(.v14),
         .macOS(.v13),
         .tvOS(.v16)
     ],

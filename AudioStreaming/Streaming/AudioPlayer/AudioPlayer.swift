@@ -572,7 +572,6 @@ open class AudioPlayer {
     /// - Throws: An `Error` when failed to start the engine.
     private func startEngineIfNeeded() throws {
         guard !isEngineRunning else {
-            Logger.debug("engine already running 🛵", category: .generic)
             return
         }
         try startEngine()
@@ -583,7 +582,7 @@ open class AudioPlayer {
     /// - Throws: An `Error` when failed to start the engine.
     private func startEngine() throws {
         try audioEngine.start()
-        Logger.debug("engine started 🛵", category: .generic)
+        Logger.debug("Engine started 🛵", category: .generic)
     }
 
     /// Pauses the audio engine and stops the player's hardware
@@ -592,7 +591,7 @@ open class AudioPlayer {
         audioEngine.reset()
         audioEngine.pause()
         player.auAudioUnit.stopHardware()
-        Logger.debug("engine paused ⏸", category: .generic)
+        Logger.debug("Engine paused ⏸", category: .generic)
     }
 
     /// Stops the audio engine and the player's hardware
@@ -604,7 +603,7 @@ open class AudioPlayer {
         rendererContext.resetBuffers()
         playerContext.setInternalState(to: .stopped)
         playerContext.stopReason.write { $0 = reason }
-        Logger.debug("engine stopped 🛑", category: .generic)
+        Logger.debug("Engine stopped 🛑", category: .generic)
     }
 
     /// Starts the audio player, resetting the buffers if requested
